@@ -1,11 +1,9 @@
 <template>
     <v-app>
-        <side-bar />
-        <top-bar />
+        <side-bar ref="sidebar"/>
+        <top-bar @toggle-left-drawer="toggleLeftDrawer"/>
         <v-content>
-            <v-slide-y-transition mode="out-in">
-                <router-view/>
-            </v-slide-y-transition>
+            <router-view/>
         </v-content>
     </v-app>
 </template>
@@ -18,5 +16,12 @@ export default {
         TopBar
     },
     name: 'admin-layout',
+    methods: {
+        toggleLeftDrawer: function() {
+            if (this.$refs.sidebar) {
+                this.$refs.sidebar.drawer = !this.$refs.sidebar.drawer 
+            }
+        }
+    }
 }
 </script>

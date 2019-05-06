@@ -6,6 +6,11 @@
         dense
         color="primary"
         dark>
+             <v-toolbar-side-icon
+                @click.stop="$emit('toggle-left-drawer')"
+                class="hidden-lg-and-up"
+                :class="searching ? 'hidden-xs-only' : ''"
+            />
             <v-spacer></v-spacer>
             <v-btn icon @click.native.stop="searchBegin">
                 <v-icon>search</v-icon>
@@ -47,8 +52,8 @@
                             </v-avatar>
                         </v-list-tile-avatar>
                         <v-list-tile-content>
-                            <v-list-tile-title>John Doe</v-list-tile-title>
-                            <v-list-tile-sub-title>Administrator</v-list-tile-sub-title>
+                            <v-list-tile-title>{{ $helper.getProp(authProfile, 'name')}}</v-list-tile-title>
+                            <v-list-tile-sub-title>{{ $helper.getProp(authProfile, 'role.title')}}</v-list-tile-sub-title>
                         </v-list-tile-content>
                     </v-list-tile>
                     <v-divider></v-divider>
@@ -63,7 +68,7 @@
                     </v-list-tile>
                     <v-divider></v-divider>
 
-                    <v-list-tile key="lock_open" @click="">
+                    <v-list-tile key="lock_open" @click="logOut">
                         <v-list-tile-action>
                             <v-icon>lock_open</v-icon>
                         </v-list-tile-action>
@@ -79,12 +84,20 @@
 </template>
 
 <script>
-import notification from './notification';
+import notification from './notification'
+import { logOutUser } from '@/utils/auth'
+import { mapGetters } from 'vuex'
 
 export default {
     name: 'top-bar',
     components: {
         notification
+    },
+    computed: {
+        ...mapGetters([
+        'sidebar',
+        'authProfile'
+        ])
     },
     data: function() {
         return {
@@ -120,11 +133,13 @@ export default {
             this.searching = true
             setTimeout(() => document.querySelector('#search').focus(), 50)
         },
-
         searchEnd() {
             this.searching = false
             this.search = ''
             document.querySelector('#search').blur()
+        },
+        logOut() {
+            return logOutUser()
         }
     }
 }

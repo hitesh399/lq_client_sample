@@ -1,28 +1,32 @@
 <template>
-    <!-- <component :is="component">
+    <component v-bind:is="layout">
         <slot/>
-    </component> -->
-    <login-layout />
+    </component>
 </template>
 
 <script>
-    import VuebaseLayout from './layouts/VuebaseLayout'
     import AdminLayout from './layouts/Admin'
-    import LoginLayout from './layouts/Login'
+    import AuthLayout from './layouts/Auth'
 
     export default {
         name: 'App',
-
-        components: {
-            VuebaseLayout,
-            AdminLayout,
-            LoginLayout
+        props: {
+            layout: String
         },
+        components: {
+            AdminLayout,
+            AuthLayout
+        },
+        created: function() {
+            this.$axios('site-general-config')
+                .then((response) => {
+                    this.$store.dispatch('updateAppKey', {key: 'configs', value:  response.data.data});
+                })
 
-        computed: {
-            component() {
-                return AdminLayout
-            }
+            this.$axios('device/user')
+                .then((response) => {
+                    this.$store.dispatch('updateAppKey', {key: 'device_users', value:  response.data.device_users});
+                })
         }
     }
 </script>

@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import axios from 'axios'
+import { getToken, getDeviceId } from '@/utils/auth'
 
 // Full config:  https://github.com/axios/axios#request-config
 // axios.defaults.baseURL = process.env.baseURL || process.env.apiUrl || ''
@@ -7,15 +8,22 @@ import axios from 'axios'
 // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
 
 let config = {
-    // baseURL: process.env.baseURL || process.env.apiUrl || ""
+    baseURL: process.env.VUE_APP_API_BASE_URL, // api Base URl
     // timeout: 60 * 1000, // Timeout
     // withCredentials: true, // Check cross-site Access-Control
 }
 
-const _axios = axios.create(config)
+let _axios = axios.create(config)
+_axios.defaults.headers.common['client-id'] = process.env.VUE_APP_CLIENT_ID;
+_axios.defaults.headers.common['Accept'] = 'application/json, text/plain, */*';
 
 _axios.interceptors.request.use(
     config => {
+        const authToken = getToken();
+        if(authToken){
+            config.headers['Authorization'] =  'Bearer '+authToken;
+        }
+        config.headers['device-id'] =  getDeviceId();
         // Do something before request is sent
         return config
     },
@@ -29,7 +37,7 @@ _axios.interceptors.request.use(
 _axios.interceptors.response.use(
     response => {
         // Do something with response data
-        return response
+        return response.data
     },
     error => {
         // Do something with response error
@@ -57,3 +65,4 @@ Plugin.install = function (Vue, options) {
 Vue.use(Plugin)
 
 export default Plugin
+export { _axios };

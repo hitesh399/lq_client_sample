@@ -22,7 +22,7 @@
             v-for="subItem in item.children">
         </sidebar-item>
     </component>
-    <component v-else v-bind:is="rootComponent" right :disabled="!miniVariant" >
+    <component v-else-if="!item.hidden" v-bind:is="rootComponent" right :disabled="!miniVariant" >
         <v-list-tile
             :to="item.path"
             exact

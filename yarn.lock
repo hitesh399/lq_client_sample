@@ -4081,6 +4081,11 @@ fs.realpath@^1.0.0:
   resolved "https://registry.yarnpkg.com/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
   integrity sha1-FQStJSMVjKpA20onh8sBQRmU6k8=
 
+fs@^0.0.1-security:
+  version "0.0.1-security"
+  resolved "https://registry.yarnpkg.com/fs/-/fs-0.0.1-security.tgz#8a7bd37186b6dddf3813f23858b57ecaaf5e41d4"
+  integrity sha1-invTcYa23d84E/I4WLV+yq9eQdQ=
+
 fsevents@^1.2.3, fsevents@^1.2.7:
   version "1.2.9"
   resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-1.2.9.tgz#3f5ed66583ccd6f400b5a00db6f7e861363e388f"
@@ -5698,6 +5703,11 @@ js-beautify@^1.6.12, js-beautify@^1.6.14:
     mkdirp "~0.5.1"
     nopt "~4.0.1"
 
+js-cookie@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/js-cookie/-/js-cookie-2.2.0.tgz#1b2c279a6eece380a12168b92485265b35b1effb"
+  integrity sha1-Gywnmm7s44ChIWi5JIUmWzWx7/s=
+
 js-levenshtein@^1.1.3:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/js-levenshtein/-/js-levenshtein-1.1.6.tgz#c6cee58eb3550372df8deb85fad5ce66ce01d59d"
@@ -6236,10 +6246,10 @@ lower-case@^1.1.1:
   resolved "https://registry.yarnpkg.com/lower-case/-/lower-case-1.1.4.tgz#9a2cabd1b9e8e0ae993a4bf7d5875c39c42e8eac"
   integrity sha1-miyr0bno4K6ZOkv31YdcOcQujqw=
 
-lq-form@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/lq-form/-/lq-form-0.1.2.tgz#2fb24d44a2536b6eacbd522f1f590629f1c96b47"
-  integrity sha512-k58x4x88vKLH0lpMXDWRqb6AxkbRnFYQnE2kjimCOeHHlQ2cJGPkvj5CWT5x81JMZSWIsGm1i2pWp4IHuy4NEw==
+lq-form@^0.1.4:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/lq-form/-/lq-form-0.1.4.tgz#5f9db33add3d4d97035b33a6362a7abd1c7e4d4a"
+  integrity sha512-E0vDwp8rmoihNRoCaf/J2UDvVNms30nB9ZXuosfDB2zdULePECAHayUu2D2o0Su4psEzX1CudkzbJ4oaHuevng==
   dependencies:
     lodash "^4.17.11"
     recursive-copy "^2.0.10"
@@ -6247,10 +6257,13 @@ lq-form@^0.1.2:
     vuejs-object-helper "^0.1.25"
     vuex "^3.1.0"
 
-lq-vuetify@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/lq-vuetify/-/lq-vuetify-0.0.1.tgz#9fe4c6bd3ca9b7c1200fdcef2c2fc70483aa07d7"
-  integrity sha512-hkynkAD0MPyciU8lJVFI2E3xXWkOIY5fuMVDINAGgsdfwoi7Z+AXIVuW7UHKgKVMGXbuJdukijFiZIOaCrJc8g==
+lq-vuetify@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/lq-vuetify/-/lq-vuetify-0.0.2.tgz#b76c91dd394b00a06eeb1ad7ca8e8ce641422995"
+  integrity sha512-vSSqWG1MKRr8xPJ914k71XJ8U0FJ/KbmExhF/apBf0TaokwirkKVshPZGzOsDHeFjhlQcXm2MjFusvK0e6RKTw==
+  dependencies:
+    axios "^0.18.0"
+    lq-form "^0.1.4"
 
 lru-cache@^4.0.1, lru-cache@^4.1.1, lru-cache@^4.1.2, lru-cache@^4.1.5:
   version "4.1.5"

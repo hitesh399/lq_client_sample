@@ -1,14 +1,18 @@
 import Vue from 'vue'
 import './plugins'
 import App from './App'
-import router from './router'
 import store from './store'
 import './registerServiceWorker';
 
 Vue.config.productionTip = false
 
-new Vue({
+const main = (props, router) => new Vue({
     router,
     store,
-    render: h => h(App)
+    render: h => h(App, {
+        props: props
+      })
 }).$mount('#app')
+
+
+export default main
