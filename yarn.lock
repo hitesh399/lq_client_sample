@@ -2689,6 +2689,19 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
+croppie@^2.6.4:
+  version "2.6.4"
+  resolved "https://registry.yarnpkg.com/croppie/-/croppie-2.6.4.tgz#7477b8c5af560c09841f7c84f55066ba128544da"
+  integrity sha512-dK2gP7nmAuzMP8TU+JNPOmZJkMyp5VPMJxE/uvmiOC7Vzwon333eo2i9T40D5rqm9NrBJU/ovAyg7xDX2Swaiw==
+
+cross-env@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/cross-env/-/cross-env-5.2.0.tgz#6ecd4c015d5773e614039ee529076669b9d126f2"
+  integrity sha512-jtdNFfFW1hB7sMhr/H6rW1Z45LFqyI431m3qU6bFXcQ3Eh7LtBuG3h74o7ohHZ3crrRkkqHlo4jYHFPcjroANg==
+  dependencies:
+    cross-spawn "^6.0.5"
+    is-windows "^1.0.0"
+
 cross-spawn@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-3.0.1.tgz#1256037ecb9f0c5f79e3d6ef135e30770184b982"
@@ -2706,7 +2719,7 @@ cross-spawn@^5.0.1:
     shebang-command "^1.2.0"
     which "^1.2.9"
 
-cross-spawn@^6.0.0:
+cross-spawn@^6.0.0, cross-spawn@^6.0.5:
   version "6.0.5"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-6.0.5.tgz#4a5ec7c64dfae22c3a14124dbacdee846d80cbc4"
   integrity sha512-eTVLrBSt7fjbDygz805pMnstIs2VTBNkRm0qxZd+M7A5XDdxVRWO5MxGBXZhjY4cqLYLdtrGqRf8mBPmzwSpWQ==
@@ -5195,7 +5208,7 @@ is-whitespace@^0.3.0:
   resolved "https://registry.yarnpkg.com/is-whitespace/-/is-whitespace-0.3.0.tgz#1639ecb1be036aec69a54cbb401cfbed7114ab7f"
   integrity sha1-Fjnssb4DauxppUy7QBz77XEUq38=
 
-is-windows@^1.0.2:
+is-windows@^1.0.0, is-windows@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/is-windows/-/is-windows-1.0.2.tgz#d1850eb9791ecd18e6182ce12a30f396634bb19d"
   integrity sha512-eXK1UInq2bPmjyX6e3VHIzMLobc4J94i4AWn+Hpq3OU5KkrRC96OAcR3PRJ/pGu6m8TRnBHP9dkXQVsT/COVIA==
@@ -6246,10 +6259,10 @@ lower-case@^1.1.1:
   resolved "https://registry.yarnpkg.com/lower-case/-/lower-case-1.1.4.tgz#9a2cabd1b9e8e0ae993a4bf7d5875c39c42e8eac"
   integrity sha1-miyr0bno4K6ZOkv31YdcOcQujqw=
 
-lq-form@^0.1.4:
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/lq-form/-/lq-form-0.1.4.tgz#5f9db33add3d4d97035b33a6362a7abd1c7e4d4a"
-  integrity sha512-E0vDwp8rmoihNRoCaf/J2UDvVNms30nB9ZXuosfDB2zdULePECAHayUu2D2o0Su4psEzX1CudkzbJ4oaHuevng==
+lq-form@^0.1.9:
+  version "0.1.9"
+  resolved "https://registry.yarnpkg.com/lq-form/-/lq-form-0.1.9.tgz#168386709fde262a04b1f9c0f895d6d39b7e0d5f"
+  integrity sha512-xwHmTCWcCB8EZ1UPGAOlL+31PxcTVZjO6XXrZgd4UNW4YIpxmWmTvE7YaE7AC2yvj1qFWqiZrhN9wyuOblTddQ==
   dependencies:
     lodash "^4.17.11"
     recursive-copy "^2.0.10"
@@ -6257,13 +6270,15 @@ lq-form@^0.1.4:
     vuejs-object-helper "^0.1.25"
     vuex "^3.1.0"
 
-lq-vuetify@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/lq-vuetify/-/lq-vuetify-0.0.2.tgz#b76c91dd394b00a06eeb1ad7ca8e8ce641422995"
-  integrity sha512-vSSqWG1MKRr8xPJ914k71XJ8U0FJ/KbmExhF/apBf0TaokwirkKVshPZGzOsDHeFjhlQcXm2MjFusvK0e6RKTw==
+lq-vuetify@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/lq-vuetify/-/lq-vuetify-0.0.6.tgz#c50a9f8a567edf20b98f947c4c510efe8d463f40"
+  integrity sha512-t1ruKNoklNe4zYQsPZa/a1S8mTqLlhmL49NJTv4HTDYAQJOysTrVYV0jvHWFcYPi+b4K4cX0IxTUvwc0WWwbQw==
   dependencies:
     axios "^0.18.0"
-    lq-form "^0.1.4"
+    cross-env "^5.2.0"
+    lq-form "^0.1.9"
+    vue-croppie "^2.0.1"
 
 lru-cache@^4.0.1, lru-cache@^4.1.1, lru-cache@^4.1.2, lru-cache@^4.1.5:
   version "4.1.5"
@@ -9918,6 +9933,13 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
+vue-croppie@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/vue-croppie/-/vue-croppie-2.0.1.tgz#ba52b2b9aaae3db882618567f96bc95ea69b41ec"
+  integrity sha512-oo9EVHvjlMg3kegHq55pibbSk4mOiAIpzEnjnhZS8kSGAFtbJ0sB9q4JrOnsfcE1gtml/UfavEVJ9fH8bGhcSQ==
+  dependencies:
+    croppie "^2.6.4"
+
 vue-hot-reload-api@^2.3.0:
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.3.tgz#2756f46cb3258054c5f4723de8ae7e87302a1ccf"
@@ -9990,10 +10012,15 @@ vuejs-object-helper@^0.1.25:
     recursive-copy "^2.0.10"
     vue "^2.6.10"
 
-vuex@^3.0.1, vuex@^3.1.0:
+vuex@^3.0.1:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/vuex/-/vuex-3.1.0.tgz#634b81515cf0cfe976bd1ffe9601755e51f843b9"
   integrity sha512-mdHeHT/7u4BncpUZMlxNaIdcN/HIt1GsGG5LKByArvYG/v6DvHcOxvDCts+7SRdCoIRGllK8IMZvQtQXLppDYg==
+
+vuex@^3.1.0:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/vuex/-/vuex-3.1.1.tgz#0c264bfe30cdbccf96ab9db3177d211828a5910e"
+  integrity sha512-ER5moSbLZuNSMBFnEBVGhQ1uCBNJslH9W/Dw2W7GZN23UQA69uapP5GTT9Vm8Trc0PzBSVt6LzF3hGjmv41xcg==
 
 w3c-hr-time@^1.0.1:
   version "1.0.1"

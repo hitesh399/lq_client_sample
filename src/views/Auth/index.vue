@@ -82,7 +82,7 @@ export default {
         return {
             e1: false,
             rules: {
-                email: {presence: true, email: true},
+                email: {presence: true, email: true, myTestValidation: true},
                 password: {presence: {allowEmpty: false}},
             },
             alert: {

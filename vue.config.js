@@ -60,9 +60,9 @@ module.exports = {
     // Output filename is inferred to be `subpage.html`.
     //subpage: 'src/subpage/main.js'
   },
-    publicPath: process.env.VUE_APP_DOMAIN_PREFIX,
-    outputDir: process.env.VUE_APP_OUTPUT_DIR,
-    indexPath: process.env.VUE_APP_INDEX_PATH,
+  publicPath: process.env.VUE_APP_DOMAIN_PREFIX,
+  outputDir: process.env.VUE_APP_OUTPUT_DIR,
+  indexPath: process.env.VUE_APP_INDEX_PATH
   
    // disable hashes in filenames
    //filenameHashing: false,
